@@ -13,13 +13,22 @@ export const errorHandler = (async (ctx: any, next: any) => {
         if (isHttpError(err)) {
             switch (err.status) {
                 case Status.NotFound:
-                    // handle NotFound
+                    ctx.response.body = "Not found";
+                    ctx.response.status = 404;
                     break;
+                case Status.UnprocessableEntity:
+                    ctx.response.body = "Missing field(s)";
+                    ctx.response.status = 422;
+                    break;
+
                 default:
-                // handle other statuses
+                    ctx.response.status = 400;
+                    ctx.response.body = "Unknown error";
             }
         } else {
             // rethrow if you can't handle the error
+            ctx.response.status = 500;
+            ctx.response.body = err.toString()
             throw err;
         }
     }

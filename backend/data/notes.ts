@@ -2,11 +2,13 @@ export const notes = [
     {
         id: 0,
         link: "https://google.com",
-        tags: ["food", "cooking"]
+        tags: ["food", "cooking"],
+        date: new Date("2021-01-24")
     },
     {
         id: 1,
         link: "https://reddit.com",
-        tags: ["meme"]
+        tags: ["meme"],
+        date: new Date()
     }
 ]

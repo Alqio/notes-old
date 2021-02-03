@@ -1,4 +1,6 @@
-export const notes = [
+import {Note} from "../types.ts";
+
+export const notes: Note[] = [
     {
         id: 0,
         name: "honey chicken recipe",

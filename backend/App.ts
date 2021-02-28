@@ -1,3 +1,6 @@
+import {config} from './deps.ts';
+config();
+
 import {Application} from './deps.ts';
 import {serverConfig}  from "./config.ts";
 import {errorHandler, logger} from "./middlewares.ts";
@@ -14,7 +17,5 @@ app.use(notesRouter.allowedMethods());
 app.use((ctx: any) => {
     ctx.response.body = 'hello world';
 })
-
-
 
 await app.listen({port: serverConfig.port});

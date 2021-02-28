@@ -1,4 +1,4 @@
 export const serverConfig = {
-    port: 5000,
+    port: Number(Deno.env.get('PORT')),
     hostname: '0.0.0.0'
 }

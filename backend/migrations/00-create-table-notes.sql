@@ -1,9 +1,9 @@
-CREATE DATABASE note;
+CREATE DATABASE notes;
 
 CREATE TABLE IF NOT EXISTS notes (
     id serial PRIMARY KEY,
     name varchar(255) NOT NULL,
-    link varchar(255) NOT NULL,
+    link varchar(255),
     created TIMESTAMP NOT NULL
 );
 
